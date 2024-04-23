@@ -1,0 +1,150 @@
+:root {
+  --font_family: "Work Sans", sans-serif;
+  --white: hsl(0, 0%, 100%);
+  --LightPink: hsl(275, 100%, 97%);
+  --GrayishPurple: hsl(292, 16%, 49%);
+  --DarkPurple: hsl(292, 42%, 14%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background-color: var(--LightPink);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+.bgimage {
+  width: 100%;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: visible;
+}
+
+.container {
+  justify-content: center;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: var(--white);
+  width: 40rem;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: hsl(292, 42%, 14%, 20%) 0px 8px 24px;
+  margin-top: 10%;
+}
+h1 {
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--DarkPurple);
+}
+h1 img {
+  margin-right: 20px;
+}
+h2 {
+  display: flex;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--DarkPurple);
+  justify-content: space-between;
+  align-items: center;
+}
+.icon {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 1rem;
+}
+.icon:hover {
+  transform: scale(1.1);
+  opacity: 80%;
+}
+.questions {
+  padding: 15px;
+}
+.answer {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--GrayishPurple);
+}
+.hidden {
+  display: none;
+}
+.answer {
+  display: none;
+}
+
+.answer.active {
+  display: block;
+}
+
+.bgmobile {
+  width: 100%;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  display: none;
+}
+
+@media screen and (max-width: 677px) {
+  .bgimage {
+    display: hidden;
+  }
+  .bgmobile {
+    display: block;
+  }
+  .container {
+    justify-content: center;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: var(--white);
+    width: 27rem;
+    padding: 2rem 1rem 1rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: hsl(292, 42%, 14%, 20%) 0px 8px 24px;
+  }
+}
+
+@media screen and (max-width: 447px) {
+  .bgimage {
+    display: hidden;
+  }
+  .bgmobile {
+    display: visible;
+  }
+  .container {
+    justify-content: center;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: var(--white);
+    width: 20rem;
+    padding: 2rem 1rem 1rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: hsl(292, 42%, 14%, 20%) 0px 8px 24px;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 30px;
+  }
+}
